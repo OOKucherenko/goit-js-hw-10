@@ -18,3 +18,39 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+span {
+  font-weight: 700;
+}
+
+.card {
+  display: flex;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.field__text {
+  margin-right: 10px;
+}
+
+.country-info,
+.country-list {
+  transform: translateX(-200%);
+  transition: all 500ms linear;
+}
+
+.js-active {
+  transform: translateX(0);
+}
