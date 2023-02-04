@@ -32,7 +32,6 @@ const changeInput = e => {
         }
         if (data.length > 1 && data.length <= 10) {
           reset();
-
           renderCountryList(data);
         }
         if (data.length === 1) {
@@ -50,7 +49,6 @@ refs.input.addEventListener('input', debounce(changeInput, DEBOUNCE_DELAY));
 
 //render
 const renderCountryInfo = name => {
-  refs.countryList.innerHTML = '';
   const markup = name
     .map(name => {
       const lang = name.languages.map(ln => ln.name).join(', ');
@@ -61,18 +59,14 @@ const renderCountryInfo = name => {
     })
     .join('');
   refs.countryInfo.innerHTML = markup;
-  refs.countryList.classList.add('js-active');
+  refs.countryInfo.classList.add('js-active');
 };
 
 const renderCountryList = name => {
-  console.log('1');
   const markup = name
     .map(name => {
       const lang = name.languages.map(ln => ln.name).join(', ');
-      return `<p class="field"><img src="${name.flags.svg}" alt="${name.name}" width="30" height="30"/>${name.name}</p>
-        <p class="field">capital: <span class="field__text">${name.capital}</span></p>
-        <p class="field">population: <span class="field__text">${name.population}</span></p>
-        <p class="field">languages: <span class="field__text">${lang}</span></p>`;
+      return `<p class="field"><img src="${name.flags.svg}" alt="${name.name}" width="30" height="30"/>${name.name}</p>`;
     })
     .join('');
   refs.countryList.innerHTML = markup;
