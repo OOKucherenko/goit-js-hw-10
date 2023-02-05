@@ -26,6 +26,10 @@ ul {
   padding-bottom: 10px;
 }
 
+img {
+  margin-right: 10px;
+}
+
 span {
   font-weight: 700;
 }
